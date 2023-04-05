@@ -26,3 +26,42 @@ i:hover {
 h2 {
   font-size: 30px;
 }
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #8a9a5b;
+  width: 10rem;
+  margin-top: 30px;
+  margin-left: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  height: fit-content;
+}
+ul {
+  font-size: 20px;
+}
+#typelist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#type {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #aab588;
+  height: 30px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 8px;
+}
+#type:hover {
+  background-color: white;
+  color: #aab588;
+}
