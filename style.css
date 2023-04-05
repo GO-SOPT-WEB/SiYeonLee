@@ -3,12 +3,18 @@
 body {
   background-color: #ecffdc;
   margin: 0;
+  padding-top: 100px;
 }
+
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #5f8575;
+  background-color: #4f7942;
   margin: 0;
   padding: 0;
   padding-left: 40px;
@@ -16,11 +22,8 @@ header {
   height: 90px;
 }
 
-i {
+header i {
   font-size: 20px;
-}
-i:hover {
-  background-color: white;
 }
 
 h2 {
@@ -28,9 +31,11 @@ h2 {
 }
 
 main {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-gap: 2em;
 }
+
 nav {
   display: flex;
   flex-direction: column;
@@ -43,14 +48,17 @@ nav {
   color: white;
   height: fit-content;
 }
+
 ul {
   font-size: 20px;
 }
+
 #typelist {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 #type {
   display: flex;
   justify-content: flex-start;
@@ -61,7 +69,58 @@ ul {
   padding: 5px;
   border-radius: 8px;
 }
+
 #type:hover {
   background-color: white;
   color: #aab588;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(5, 13em);
+  gap: 1em;
+  margin-top: 30px;
+}
+
+article {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b8c399;
+  color: white;
+  border-radius: 8px;
+}
+
+article small {
+  width: 9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+article i {
+  color: white;
+  font-size: 20px;
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+article i:hover {
+  color: red;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+small {
+  padding-top: 10px;
+  font-size: small;
+}
+
+img {
+  padding-top: 10px;
+  width: 100%;
+  height: 10rem;
 }
