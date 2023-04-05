@@ -1,1 +1,28 @@
 @import "reset.css";
+
+body {
+  background-color: #ecffdc;
+  margin: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5f8575;
+  margin: 0;
+  padding: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 90px;
+}
+
+i {
+  font-size: 20px;
+}
+i:hover {
+  background-color: white;
+}
+
+h2 {
+  font-size: 30px;
+}
