@@ -1,1 +1,25 @@
 @import "reset.css";
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  width: 450px;
+  background-color: #ffbc41;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  padding-top: 3em;
+  font-weight: bold;
+  color: white;
+}
+
+h2 {
+  font-size: 2em;
+}
