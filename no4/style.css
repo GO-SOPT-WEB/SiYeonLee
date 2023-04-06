@@ -11,7 +11,8 @@ main {
   background-color: #ffbc41;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -22,4 +23,72 @@ header {
 
 h2 {
   font-size: 2em;
+}
+
+#calender {
+  background-color: #fbe95e;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(7, 3em);
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 30px;
+  font-weight: 800;
+}
+
+#one_day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#day {
+  margin-bottom: 15px;
+}
+
+#icon {
+  position: relative;
+}
+
+i {
+  font-size: 35px;
+  vertical-align: middle;
+  width: 100%;
+  color: white;
+}
+
+#icon_no {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+}
+
+#date {
+  margin-top: 15px;
+}
+
+#icon_selected {
+  position: relative;
+}
+
+#icon_selected i {
+  font-size: 35px;
+  vertical-align: middle;
+  width: 100%;
+  color: rgb(194, 161, 247);
+}
+
+#icon_no_selected {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+}
+
+#date_selected {
+  margin-top: 15px;
+  color: rgb(194, 161, 247);
 }
