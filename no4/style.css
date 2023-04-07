@@ -15,6 +15,8 @@ main {
   align-items: center;
 }
 
+/*헤더*/
+
 header {
   padding-top: 3em;
   font-weight: bold;
@@ -24,6 +26,8 @@ header {
 h2 {
   font-size: 2em;
 }
+
+/*캘린더*/
 
 #calender {
   background-color: #fbe95e;
@@ -50,7 +54,7 @@ h2 {
   position: relative;
 }
 
-i {
+.fa-clover {
   font-size: 35px;
   vertical-align: middle;
   width: 100%;
@@ -77,7 +81,7 @@ i {
   font-size: 35px;
   vertical-align: middle;
   width: 100%;
-  color: rgb(194, 161, 247);
+  color: #c093ff;
 }
 
 #icon_no_selected {
@@ -90,5 +94,116 @@ i {
 
 #date_selected {
   margin-top: 15px;
-  color: rgb(194, 161, 247);
+  color: #c093ff;
+}
+
+/*투두리스트*/
+
+#todo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 490px;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.fa-circle-plus {
+  font-size: 25px;
+  vertical-align: middle;
+  width: 100%;
+  color: white;
+  margin-left: 5px;
+}
+
+.everyday {
+  background-color: #aeeaff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 20px;
+}
+
+.exercise {
+  background-color: #a2fbb3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 20px;
+}
+
+.sopt {
+  background-color: #fec6b1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 20px;
+}
+
+.study {
+  background-color: #ff8da2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 20px;
+}
+
+#todo_list {
+  margin-bottom: 10px;
+}
+
+.fa-heart {
+  font-size: 15px;
+  color: white;
+  margin-right: 10px;
+}
+
+#todo_items {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  color: black;
+  font-size: 20px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+/*footer*/
+footer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+}
+
+#button {
+  background-color: #323638;
+  color: white;
+  font-size: 20px;
+  width: 40px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+h4 {
+  font-size: 1em;
+  margin-top: 10px;
 }
