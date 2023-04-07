@@ -99,6 +99,11 @@ h2 {
 
 /*투두리스트*/
 
+#list {
+  position: relative;
+  right: 90px;
+}
+
 #todo {
   display: flex;
   flex-direction: column;
@@ -181,6 +186,7 @@ h3 {
 }
 
 /*footer*/
+
 footer {
   display: flex;
   flex-direction: row;
