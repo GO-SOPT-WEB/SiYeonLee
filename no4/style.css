@@ -6,21 +6,25 @@ body {
 }
 
 main {
-  margin: 0 auto;
-  width: 450px;
-  background-color: #ffbc41;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 450px;
+  height: 100vh;
+  margin: 0 auto;
+
+  background-color: #ffbc41;
 }
 
 /*헤더*/
 
 header {
-  padding-top: 3em;
-  font-weight: bold;
+  padding-top: 48px;
+
   color: white;
+
+  font-weight: bold;
 }
 
 h1 {
@@ -30,13 +34,16 @@ h1 {
 /*캘린더*/
 
 #calender {
-  background-color: #fbe95e;
-  color: black;
   display: grid;
   grid-template-columns: repeat(7, 3em);
-  padding: 20px;
-  border-radius: 15px;
+
   margin-top: 30px;
+  padding: 20px;
+
+  background-color: #fbe95e;
+  color: black;
+  border-radius: 15px;
+
   font-weight: 800;
 }
 
@@ -55,10 +62,13 @@ h1 {
 }
 
 .fa-clover {
-  font-size: 35px;
   vertical-align: middle;
+
   width: 100%;
+
   color: white;
+
+  font-size: 35px;
 }
 
 #icon_no {
@@ -78,10 +88,13 @@ h1 {
 }
 
 #icon_selected i {
-  font-size: 35px;
   vertical-align: middle;
+
   width: 100%;
+
   color: #c093ff;
+
+  font-size: 35px;
 }
 
 #icon_no_selected {
@@ -100,16 +113,16 @@ h1 {
 /*투두리스트*/
 
 #list {
-  position: relative;
-  right: 90px;
+  width: 80%;
 }
 
 #todo {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-height: 490px;
   align-items: flex-start;
+
+  max-height: 490px;
   margin-top: 30px;
 }
 
@@ -118,50 +131,61 @@ h2 {
 }
 
 .fa-circle-plus {
-  font-size: 25px;
   vertical-align: middle;
+
   width: 100%;
-  color: white;
   margin-left: 5px;
+
+  color: white;
+
+  font-size: 25px;
 }
 
 .everyday {
-  background-color: #aeeaff;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+
   width: fit-content;
+  padding: 10px;
+
+  background-color: #aeeaff;
   border-radius: 20px;
 }
 
 .exercise {
-  background-color: #a2fbb3;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+
   width: fit-content;
+  padding: 10px;
+
+  background-color: #a2fbb3;
   border-radius: 20px;
 }
 
 .sopt {
-  background-color: #fec6b1;
   display: flex;
   flex-direction: row;
   align-items: center;
+
   padding: 10px;
   width: fit-content;
+
+  background-color: #fec6b1;
   border-radius: 20px;
 }
 
 .study {
-  background-color: #ff8da2;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+
   width: fit-content;
+  padding: 10px;
+
+  background-color: #ff8da2;
   border-radius: 20px;
 }
 
@@ -170,19 +194,24 @@ h2 {
 }
 
 .fa-heart {
-  font-size: 15px;
-  color: white;
   margin-right: 10px;
+
+  color: white;
+
+  font-size: 15px;
 }
 
 #todo_items {
-  width: 100%;
   display: flex;
   justify-content: flex-start;
-  color: black;
-  font-size: 20px;
+
+  width: 100%;
   margin-top: 5px;
   padding: 5px;
+
+  color: black;
+
+  font-size: 20px;
 }
 
 /*footer*/
@@ -195,21 +224,25 @@ footer {
 }
 
 #button {
-  background-color: #323638;
-  color: white;
-  font-size: 20px;
-  width: 40px;
-  height: 50px;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  width: 40px;
+  height: 50px;
   margin: 20px;
   padding: 10px;
+
+  background-color: #323638;
+  color: white;
+  border-radius: 10px;
+
+  font-size: 20px;
 }
 
-h4 {
-  font-size: 1em;
+h3 {
   margin-top: 10px;
+
+  font-size: 16px;
 }
