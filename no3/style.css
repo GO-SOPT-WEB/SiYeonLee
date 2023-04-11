@@ -116,10 +116,33 @@ article {
   border-radius: 8px;
 }
 
-article small {
-  width: 9rem;
+.hashtag_list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   overflow: hidden;
-  text-align: center;
+  padding: 0px;
+  height: 30px;
+  width: 150px;
+}
+
+.hashtag_item {
+  display: inline-block;
+  margin-right: 5px;
+  font-weight: 100;
+  font-size: 15px;
+
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+article ul {
+  display: inline-block;
+  padding: 10px 0px;
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: clip;
 }
 
 article i {
