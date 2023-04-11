@@ -16,9 +16,7 @@ header {
   align-items: center;
   background-color: #4f7942;
   margin: 0;
-  padding: 0;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 0 40px;
   height: 90px;
   font-weight: bolder;
 }
@@ -27,21 +25,21 @@ header i {
   font-size: 20px;
 }
 
-h2 {
+h1 {
   font-size: 30px;
 }
 
 main {
   display: grid;
   grid-template-columns: 1fr 7fr;
-  grid-gap: 2em;
+  grid-gap: 32px;
 }
 
 nav {
   display: flex;
   flex-direction: column;
   background-color: #8a9a5b;
-  width: 10rem;
+  width: 160px;
   margin-top: 30px;
   margin-left: 30px;
   padding: 20px;
@@ -78,32 +76,32 @@ ul {
 
 section {
   display: grid;
-  grid-template-columns: repeat(5, 13em);
+  grid-template-columns: repeat(5, 208px);
   gap: 1em;
   margin-top: 30px;
 }
 
 @media screen and (max-width: 1380px) {
   section {
-    grid-template-columns: repeat(4, 13em);
+    grid-template-columns: repeat(4, 208px);
   }
 }
 
 @media screen and (max-width: 1150px) {
   section {
-    grid-template-columns: repeat(3, 13em);
+    grid-template-columns: repeat(3, 208px);
   }
 }
 
 @media screen and (max-width: 925px) {
   section {
-    grid-template-columns: repeat(2, 13em);
+    grid-template-columns: repeat(2, 208px);
   }
 }
 
 @media screen and (max-width: 700px) {
   section {
-    grid-template-columns: repeat(1, 13em);
+    grid-template-columns: repeat(1, 208px);
   }
 }
 
@@ -119,7 +117,6 @@ article {
 
 article small {
   width: 9rem;
-  white-space: nowrap;
   overflow: hidden;
   text-align: center;
 }
@@ -135,7 +132,7 @@ article i:hover {
   color: red;
 }
 
-h3 {
+h2 {
   font-size: 20px;
 }
 
@@ -147,5 +144,5 @@ small {
 img {
   padding-top: 10px;
   width: 100%;
-  height: 10rem;
+  height: 160px;
 }
