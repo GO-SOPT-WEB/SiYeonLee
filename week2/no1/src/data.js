@@ -1,4 +1,4 @@
-const Menu = [
+export const menu = [
   {
     category: "tomato",
     name: "뽀모도로 파스타",
@@ -57,4 +57,9 @@ const Menu = [
   },
 ];
 
-export default Menu;
+export const categoryNames = {
+  all: "전체🍽️",
+  tomato: "토마토 소스🥫",
+  oil: "오일 소스🧈",
+  cream: "크림 소스🥛",
+};

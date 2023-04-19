@@ -1,7 +1,6 @@
-import Menu from "./data.js";
+import { menu as menus, categoryNames } from "./data.js";
 
 const menuArea = document.getElementById("menu_area");
-const menus = Menu;
 
 //메뉴파트
 
@@ -88,6 +87,7 @@ menus.forEach((menu) => {
 });
 
 //카테고리 선택 파트
+
 const categoryButton = document.querySelectorAll("#type_list > label input");
 const categoryList = [];
 
@@ -114,7 +114,7 @@ const displaySelectedCategory = () => {
     categoryBox.id = "category_box";
 
     const categoryTitle = document.createElement("h3");
-    categoryTitle.innerText = category;
+    categoryTitle.innerText = categoryNames[category];
 
     const deleteIconWrapper = document.createElement("div");
     deleteIconWrapper.id = "delete_icon_wrapper";
