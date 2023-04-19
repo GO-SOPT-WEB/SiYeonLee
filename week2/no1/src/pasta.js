@@ -96,7 +96,9 @@ categoryButton.forEach((button) => {
     const category = event.target.value;
     console.log("Clicked!!", category);
     if (button.checked) {
-      categoryList.push(category);
+      if (!categoryList.includes(category)) {
+        categoryList.push(category);
+      }
     }
     displaySelectedCategory();
   });
