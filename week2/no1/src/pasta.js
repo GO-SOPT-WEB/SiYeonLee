@@ -120,10 +120,7 @@ const displaySelectedCategory = () => {
     deleteIconWrapper.id = "delete_icon_wrapper";
 
     deleteIconWrapper.addEventListener("click", () => {
-      console.log(category);
-      const index = categoryList.indexOf(category);
-      categoryList.splice(index, 1);
-      displaySelectedCategory();
+      deleteSelectedCategory(category);
     });
 
     const deleteIcon = document.createElement("i");
@@ -135,4 +132,10 @@ const displaySelectedCategory = () => {
 
     categoryArea.appendChild(categoryBox);
   });
+};
+
+const deleteSelectedCategory = (category) => {
+  const index = categoryList.indexOf(category);
+  categoryList.splice(index, 1);
+  displaySelectedCategory();
 };
