@@ -132,6 +132,15 @@ const displaySelectedCategory = () => {
 
     categoryArea.appendChild(categoryBox);
   });
+
+  categoryButton.forEach((button) => {
+    const category = button.value;
+    if (categoryList.includes(category)) {
+      button.checked = true;
+    } else {
+      button.checked = false;
+    }
+  });
 };
 
 const deleteSelectedCategory = (category) => {
