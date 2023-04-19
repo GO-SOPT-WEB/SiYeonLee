@@ -53,7 +53,7 @@ ul {
   font-size: 20px;
 }
 
-#typelist {
+#type_list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,7 +75,12 @@ ul {
   color: #aab588;
 }
 
-section {
+#main_area {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu_area {
   display: grid;
   grid-template-columns: repeat(5, 208px);
   gap: 16px;
@@ -126,11 +131,11 @@ article {
 .hashtag_list {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
   padding: 0px;
-  height: 30px;
+  height: 15px;
   width: 150px;
 }
 
@@ -142,6 +147,63 @@ article {
 
   white-space: nowrap;
   text-overflow: clip;
+}
+
+.hashtag_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 160px;
+  height: 35px;
+}
+
+.fa-plus {
+  font-size: 15px;
+  margin: 0;
+}
+
+.fa-plus:hover {
+  color: #4f7942;
+}
+
+.tag_modal {
+  display: none;
+  position: absolute;
+  width: 180px;
+  height: 80px;
+  padding: 10px;
+  background-color: #8a9a5b;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.tag_modal_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-xmark {
+  margin: 0;
+}
+.modal_hashtag_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0px;
+  height: 30px;
+  width: 100%;
+}
+
+.modal_hashtag_item {
+  /* 이거 필요한가...? */
+  /* white-space: nowrap; */
+
+  display: inline-block;
+  margin: 5px;
+  font-weight: 100;
+  color: white;
 }
 
 article ul {

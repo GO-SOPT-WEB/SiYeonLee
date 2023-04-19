@@ -1,9 +1,11 @@
 import { initialMenu } from "./data.js";
 
-const menuArea = document.getElementById("menu-area");
+const menuArea = document.getElementById("menu_area");
 
 const menuState = [...initialMenu];
 const filteredMenu = [];
+
+const categoryButton = document.querySelectorAll("#type_list > label > input");
 
 function renderMenuState() {
   menuArea.innerHTML = "";
@@ -50,3 +52,12 @@ function renderMenuState() {
 }
 
 renderMenuState();
+
+// import { initialCategory } from "./data.js";
+
+// const categoryArea = document.getElementById("category_area");
+
+// filteredCategory.forEach((selectedCategory) => {
+//   const categoryCard = document.createElement("article");
+//   categoryCard.innerText = ;
+// })
