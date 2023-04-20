@@ -118,6 +118,7 @@ ul {
   }
 }
 
+/* menu card */
 article {
   padding: 20px;
   display: flex;
@@ -166,6 +167,8 @@ article {
   color: #4f7942;
 }
 
+/* modal */
+
 .tag_modal {
   display: none;
   position: absolute;
@@ -190,18 +193,15 @@ article {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px 0;
   padding: 0px;
   height: 30px;
   width: 100%;
 }
 
 .modal_hashtag_item {
-  /* 이거 필요한가...? */
-  /* white-space: nowrap; */
-
   display: inline-block;
-  margin: 5px;
+  margin-top: 8px;
   font-weight: 100;
   color: white;
 }
