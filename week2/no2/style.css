@@ -189,7 +189,12 @@ h2 {
   border-radius: 20px;
 }
 
-#todo_list {
+#todo_item_button {
+  border: none;
+  background-color: transparent;
+}
+
+#todo ul {
   margin-bottom: 10px;
 }
 
@@ -201,7 +206,7 @@ h2 {
   font-size: 15px;
 }
 
-#todo_items {
+#todo li {
   display: flex;
   justify-content: flex-start;
 
