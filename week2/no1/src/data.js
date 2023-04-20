@@ -37,14 +37,14 @@ export const menu = [
   {
     category: "oil",
     name: "봉골레 파스타",
-    hashtags: ["#조개듬뿍", "#올리브오일"],
+    hashtags: ["#조개듬뿍", "#올리브오일", "#이선균"],
     image_url:
       "https://i.pinimg.com/474x/0d/39/5c/0d395c114ab4a795a172102d35fa7739.jpg",
   },
   {
     category: "cream",
     name: "카르보나라",
-    hashtags: ["#노른자", "#후추", "#베이컨"],
+    hashtags: ["#노른자", "#후추", "#베이컨", "#늬끼"],
     image_url:
       "https://i.pinimg.com/474x/19/c0/07/19c00717ec29858f3904dafb569d1841.jpg",
   },

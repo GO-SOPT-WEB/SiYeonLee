@@ -13,6 +13,9 @@ const displayMenus = () => {
     }
   });
 
+  //위와 같은 거! 참고용
+  // const filteredMenus = menus.filter(menu => categoryList.includes(menu.category) || categoryList.includes("all"));
+
   filteredMenus.forEach((menu) => {
     const card = document.createElement("article");
 
@@ -95,6 +98,7 @@ const displayMenus = () => {
     menuArea.appendChild(card);
   });
 };
+
 //카테고리 선택 파트
 
 const categoryButton = document.querySelectorAll("#type_list > label input");
@@ -103,10 +107,13 @@ const categoryList = ["all"];
 categoryButton.forEach((button) => {
   button.addEventListener("click", (event) => {
     const category = event.target.value;
-    console.log("Clicked!!", category);
+    // console.log("Clicked!!", category);
     if (button.checked) {
       if (!categoryList.includes(category)) {
         categoryList.push(category);
+        // } else if ((button.checked = true)) {
+        //   categoryList.pop(category);
+        //   button.checked = false;
       }
     }
     displaySelectedCategory();
@@ -116,11 +123,13 @@ categoryButton.forEach((button) => {
 
 const displaySelectedCategory = () => {
   const categoryArea = document.getElementById("category_area");
+  const categoryWrapper = document.createElement("div");
+  categoryWrapper.id = "category_wrapper";
 
   categoryArea.innerHTML = "";
 
   categoryList.forEach((category) => {
-    const categoryBox = document.createElement("article");
+    const categoryBox = document.createElement("div");
     categoryBox.id = "category_box";
 
     const categoryTitle = document.createElement("h3");
@@ -140,7 +149,9 @@ const displaySelectedCategory = () => {
     categoryBox.appendChild(categoryTitle);
     categoryBox.appendChild(deleteIconWrapper);
 
-    categoryArea.appendChild(categoryBox);
+    categoryWrapper.appendChild(categoryBox);
+
+    categoryArea.appendChild(categoryWrapper);
   });
 
   categoryButton.forEach((button) => {
