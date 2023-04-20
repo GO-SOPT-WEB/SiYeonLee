@@ -12,12 +12,12 @@ export const initialCalender = [
   {
     day: "Wed",
     date: "5",
-    things_to_do: "2",
+    things_to_do: "3",
   },
   {
     day: "Thu",
     date: "6",
-    things_to_do: "2",
+    things_to_do: "4",
   },
   {
     day: "Fri",
@@ -46,10 +46,8 @@ export const initialCategories = [
 ];
 
 export const initialEveryDayToDos = [
-  {
-    item: "가족식사🍽️",
-    item: "옷 정리🧦",
-  },
+  { item: "가족식사🍽️" },
+  { item: "옷 정리🧦" },
 ];
 
 export const initialExerciseToDos = [
