@@ -1,11 +1,4 @@
-import {
-  initialCalender as calender,
-  initialToDos as toDos,
-  //   initialEveryDayToDos as everydayToDos,
-  //   initialExerciseToDos,
-  //   initialSoptToDos,
-  //   initialStudyToDos,
-} from "./data.js";
+import { initialCalender as calender, initialToDos as toDos } from "./data.js";
 
 const displayToDos = () => {
   const todoArea = document.getElementById("todo");
@@ -43,6 +36,7 @@ const displayToDos = () => {
       heartWrapper.addEventListener("click", () => {
         item.isSelected = !item.isSelected;
         displayToDos();
+        displayCalender();
       });
 
       if (item.isSelected) {
@@ -104,7 +98,7 @@ const displayToDos = () => {
 
 const displayCalender = () => {
   const calenderArea = document.getElementById("calender");
-
+  calenderArea.innerHTML = "";
   calender.forEach((day) => {
     const oneDay = document.createElement("article");
     oneDay.id = "one_day";
@@ -119,9 +113,21 @@ const displayCalender = () => {
 
     const iconNumber = document.createElement("div");
     iconNumber.id = "icon_no";
-    iconNumber.innerText = day.things_to_do;
+    if (day.day === "Fri") {
+      let count = 0;
+      toDos.forEach((todo) => {
+        todo.item.forEach((item) => {
+          if (item.isSelected === false) {
+            count++;
+          }
+        });
+      });
+      iconNumber.innerText = count;
+    } else {
+      iconNumber.innerText = day.things_to_do;
+    }
+
     //각 카테고리 별 투두리스트 어레이.length 로 투두 갯수 표시하기!!
-    //예) iconNumber.innerText = filteredEverydayTodoList.length;
     //문제 = 각 카테고리별로 filtered array 이름이 다를텐데 그걸 어떻게 지정..?
 
     const date = document.createElement("time");
