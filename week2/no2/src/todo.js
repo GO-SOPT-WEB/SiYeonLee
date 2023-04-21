@@ -41,12 +41,7 @@ const displayToDos = () => {
 
       const heartWrapper = document.createElement("span");
       heartWrapper.addEventListener("click", () => {
-        const selection = item.isSelected;
-        if (selection === false) {
-          item.isSelected = true;
-        } else {
-          item.isSelected = false;
-        }
+        item.isSelected = !item.isSelected;
         displayToDos();
       });
 
