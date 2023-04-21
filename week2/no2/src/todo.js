@@ -10,6 +10,7 @@ import {
 const displayToDos = () => {
   const todoArea = document.getElementById("todo");
 
+  todoArea.innerHTML = "";
   toDos.forEach((category) => {
     const categoryBox = document.createElement("div");
     categoryBox.id = "category_box";
@@ -39,7 +40,16 @@ const displayToDos = () => {
       todoItemName.innerText = item.name;
 
       const heartWrapper = document.createElement("span");
-      heartWrapper.addEventListener("click", () => {});
+      heartWrapper.addEventListener("click", () => {
+        const selection = item.isSelected;
+        if (selection === false) {
+          item.isSelected = true;
+        } else {
+          item.isSelected = false;
+        }
+        displayToDos();
+      });
+
       if (item.isSelected) {
         heartWrapper.className = "selected";
       }
