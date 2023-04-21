@@ -1,4 +1,8 @@
-import { initialCalender as calender, initialToDos as toDos } from "./data.js";
+import {
+  initialCalender as calender,
+  initialToDos as toDos,
+  footer,
+} from "./data.js";
 
 const displayToDos = () => {
   const todoArea = document.getElementById("todo");
@@ -16,7 +20,45 @@ const displayToDos = () => {
     title.innerText = category.category;
 
     const iconWrapper = document.createElement("span");
+    iconWrapper.className = "plus_icon_wrapper";
     iconWrapper.innerHTML = '<i class="fa-solid fa-circle-plus"></i>';
+    iconWrapper.addEventListener("click", () => {
+      console.log("button clicked");
+      modal.style.display = "block";
+    });
+
+    const modal = document.createElement("div");
+    modal.className = "modal";
+
+    const modalContent = document.createElement("div");
+    modalContent.className = "modal_content";
+
+    const modalInputWrapper = document.createElement("div");
+    modalInputWrapper.className = "modal_input_wrapper";
+
+    const modalInput = document.createElement("input");
+    modalInput.className = "modal_input";
+    modalInput.type = "text";
+    modalInput.value = "";
+
+    const closeIconWrapper = document.createElement("span");
+    closeIconWrapper.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    closeIconWrapper.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    const addButtonWrapper = document.createElement("div");
+    addButtonWrapper.className = "add_button_wrapper";
+
+    const addButton = document.createElement("button");
+    addButton.className = "add_button";
+    addButton.innerText = "Add";
+    addButton.addEventListener("click", () => {
+      category.item.push({ name: modalInput.value, isSelected: false });
+      modal.style.display = "none";
+      displayToDos();
+      displayCalender();
+    });
 
     const todoListWrapper = document.createElement("div");
     todoListWrapper.id = "todo_list_wrapper";
@@ -45,56 +87,34 @@ const displayToDos = () => {
 
       heartWrapper.innerHTML = '<i class="fa-solid fa-heart"></i>';
 
-      // 어떻게 해야 같은 li 안에 있으면서 하트 아이콘이 아이템 이름 텍스트 보다 앞에 올 수 있을까??
+      modalInputWrapper.appendChild(modalInput);
+      modalInputWrapper.appendChild(closeIconWrapper);
+
+      addButtonWrapper.appendChild(addButton);
+
+      modalContent.appendChild(modalInputWrapper);
+      modalContent.appendChild(addButtonWrapper);
+
+      modal.appendChild(modalContent);
+
+      categoryBox.appendChild(modal);
+
       todoItem.appendChild(heartWrapper);
       todoItem.appendChild(todoItemName);
 
       todoList.appendChild(todoItem);
     });
-    // const todoItem = document.createElement("li");
-    // todoItem.innerHTML = '<i class="fa-solid fa-heart"></i>';
-    // todoItem.innerText = category.item;
-    // //이렇게 하면 데이터 안의 모든 아이템에 대해서 리스트 생성이 되나??? 안되지 않나..?
-    // //forEach 안에 또 forEach 를 써야하나? -> ㅇㅇㅇㅇㅇㅇㅇㅇ 그러네 ㅎㅎㅎ
 
     title.appendChild(iconWrapper);
     titleBox.appendChild(title);
 
     todoListWrapper.appendChild(todoList);
-    // 할일목록에는 뒷배경색이 없어야하는데 가장 위 div 에 포함되어있어서 색이 있는걺가해서 또 다른 div로 감싸줫는데 여전히 색 있음.. ㅎㅎ
     categoryBox.appendChild(titleBox);
     categoryBox.appendChild(todoListWrapper);
 
     todoArea.appendChild(categoryBox);
   });
 };
-
-// const filteredEverydayTodoList = [];
-
-// everydayToDos.forEach((todo) => {
-//   filteredEverydayTodoList.push(todo.item);
-//   console.log(filteredEverydayTodoList);
-// });
-
-// const displayEverydayTodo = () => {
-//   const everydayToDoArea = document.getElementById("everyday_todo_list");
-
-//   everydayToDos.forEach((todo) => {
-//     const todoItem = document.createElement("li");
-//     // todoItem.id = "todo_items"; 필요한가????css 생각해보기
-
-//     const iconButton = document.createElement("button");
-//     iconButton.id = "todo_item_button";
-//     iconButton.type = "button";
-//     iconButton.innerHTML = ' <i class="fa-solid fa-heart"></i>';
-//     console.log(iconButton.innerHTML);
-//     iconButton.innerText = todo.item;
-
-//     todoItem.appendChild(iconButton);
-
-//     everydayToDoArea.appendChild(todoItem);
-//   });
-// };
 
 const displayCalender = () => {
   const calenderArea = document.getElementById("calender");
@@ -110,6 +130,9 @@ const displayCalender = () => {
     const iconWrapper = document.createElement("div");
     iconWrapper.id = "clover_icon";
     iconWrapper.innerHTML = '<i class="fa-solid fa-clover"></i>';
+    if (day.day === "Fri") {
+      iconWrapper.className = "selected_clover";
+    }
 
     const iconNumber = document.createElement("div");
     iconNumber.id = "icon_no";
@@ -127,12 +150,12 @@ const displayCalender = () => {
       iconNumber.innerText = day.things_to_do;
     }
 
-    //각 카테고리 별 투두리스트 어레이.length 로 투두 갯수 표시하기!!
-    //문제 = 각 카테고리별로 filtered array 이름이 다를텐데 그걸 어떻게 지정..?
-
     const date = document.createElement("time");
     date.id = "date";
     date.innerText = day.date;
+    if (day.day === "Fri") {
+      date.className = "selected_date";
+    }
 
     iconWrapper.appendChild(iconNumber);
 
@@ -144,6 +167,43 @@ const displayCalender = () => {
   });
 };
 
+const calenderButton = document.querySelector("#calender_button");
+calenderButton.addEventListener("click", () => {
+  console.log("calenderbtn clicked");
+  location.href = "index.html";
+});
+
+const myButton = document.querySelector("#my_button");
+myButton.addEventListener("click", () => {
+  console.log("my btn clicked");
+  location.href = "category.html";
+});
+
+// const displayFooter = () => {
+//   const footerArea = document.getElementById("footer");
+
+//   const footerCalender = document.createElement("button");
+//   footerCalender.addEventListener("click", () => {
+//     console.log("calenderbuttonclicked");
+//   });
+//   const homeIconWrapper = document.createElement("span");
+//   homeIconWrapper.innerHTML = '<i class="fa-solid fa-house"></i><h3>달력</h3>';
+
+//   footerCalender.appendChild(homeIconWrapper);
+
+//   const footerMy = document.createElement("button");
+//   footerMy.addEventListener("click", () => {
+//     console.log("mybuttonclicked");
+//   });
+//   const personIconWrapper = document.createElement("span");
+//   personIconWrapper.innerHTML = '<i class="fa-solid fa-user"></i><h3>MY</h3>';
+
+//   footerMy.appendChild(personIconWrapper);
+
+//   footerArea.appendChild(footerMy);
+//   footerArea.appendChild(footerCalender);
+// };
+
 displayCalender();
 displayToDos();
-// displayEverydayTodo();
+// displayFooter();

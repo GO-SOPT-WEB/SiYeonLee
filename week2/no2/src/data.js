@@ -66,3 +66,12 @@ export const initialToDos = [
     ],
   },
 ];
+
+export const footer = [
+  {
+    name: "달력",
+  },
+  {
+    name: "MY",
+  },
+];
