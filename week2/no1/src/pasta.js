@@ -111,9 +111,6 @@ categoryButton.forEach((button) => {
     if (button.checked) {
       if (!categoryList.includes(category)) {
         categoryList.push(category);
-        // } else if ((button.checked = true)) {
-        //   categoryList.pop(category);
-        //   button.checked = false;
       }
     }
     displaySelectedCategory();
