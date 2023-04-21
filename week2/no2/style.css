@@ -1,5 +1,11 @@
 @import "reset.css";
 
+:root {
+  --everydaycolor: #aeeaff;
+  --exercisecolor: #a2fbb3;
+  --soptcolor: #fec6b1;
+  --studycolor: #ff8da2;
+}
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -141,7 +147,7 @@ h2 {
   font-size: 25px;
 }
 
-.everyday {
+#Everyday {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -149,11 +155,11 @@ h2 {
   width: fit-content;
   padding: 10px;
 
-  background-color: #aeeaff;
+  background-color: var(--everydaycolor);
   border-radius: 20px;
 }
 
-.exercise {
+#Exercise {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -161,11 +167,11 @@ h2 {
   width: fit-content;
   padding: 10px;
 
-  background-color: #a2fbb3;
+  background-color: var(--exercisecolor);
   border-radius: 20px;
 }
 
-.sopt {
+#SOPT {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -173,11 +179,11 @@ h2 {
   padding: 10px;
   width: fit-content;
 
-  background-color: #fec6b1;
+  background-color: var(--soptcolor);
   border-radius: 20px;
 }
 
-.study {
+#Study {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -185,18 +191,24 @@ h2 {
   width: fit-content;
   padding: 10px;
 
-  background-color: #ff8da2;
+  background-color: var(--studycolor);
   border-radius: 20px;
 }
 
-#todo_item_button {
-  border: none;
+#todo_list_wrapper {
   background-color: transparent;
 }
 
-#todo ul {
-  margin-bottom: 10px;
+#todo_list {
+  margin-right: 10px;
 }
+
+/* #todo_item_button {
+  border: none;
+  background-color: transparent;
+
+  font-size: 20px;
+} */
 
 .fa-heart {
   margin-right: 10px;
@@ -204,6 +216,10 @@ h2 {
   color: white;
 
   font-size: 15px;
+}
+
+.selected .fa-heart {
+  color: red;
 }
 
 #todo li {
