@@ -10,6 +10,8 @@ const displayMenus = () => {
   menus.forEach((menu) => {
     if (categoryList.includes(menu.category) || categoryList.includes("all")) {
       filteredMenus.push(menu);
+    } else if (categoryList.length === 0) {
+      categoryList.push("all");
     }
   });
 
@@ -45,10 +47,10 @@ const displayMenus = () => {
     const plusIcon = document.createElement("i");
     plusIcon.className = "fa-solid fa-plus";
 
-    const modal = document.createElement("div");
+    const modal = document.createElement("section");
     modal.className = "tag_modal";
 
-    const modalContent = document.createElement("div");
+    const modalContent = document.createElement("article");
     modalContent.className = "tag_modal_content";
 
     const modalHashtagList = document.createElement("ul");
@@ -107,7 +109,6 @@ const categoryList = ["all"];
 categoryButton.forEach((button) => {
   button.addEventListener("click", (event) => {
     const category = event.target.value;
-    // console.log("Clicked!!", category);
     if (button.checked) {
       if (!categoryList.includes(category)) {
         categoryList.push(category);
@@ -126,7 +127,7 @@ const displaySelectedCategory = () => {
   categoryArea.innerHTML = "";
 
   categoryList.forEach((category) => {
-    const categoryBox = document.createElement("div");
+    const categoryBox = document.createElement("section");
     categoryBox.id = "category_box";
 
     const categoryTitle = document.createElement("h3");
@@ -152,12 +153,14 @@ const displaySelectedCategory = () => {
   });
 
   categoryButton.forEach((button) => {
-    const category = button.value;
-    if (categoryList.includes(category)) {
-      button.checked = true;
-    } else {
-      button.checked = false;
-    }
+    button.checked = categoryList.includes(button.value);
+    //참고용!! 밑의 코드를 위의 코드로 한줄로 정리한거!!
+    // const category = button.value;
+    // if (categoryList.includes(category)) {
+    //   button.checked = true;
+    // } else {
+    //   button.checked = false;
+    // }
   });
 };
 
