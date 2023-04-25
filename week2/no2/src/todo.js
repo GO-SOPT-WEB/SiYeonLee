@@ -1,8 +1,4 @@
-import {
-  initialCalender as calender,
-  initialToDos as toDos,
-  footer,
-} from "./data.js";
+import { initialCalender as calender, initialToDos as toDos } from "./data.js";
 
 const displayToDos = () => {
   const todoArea = document.getElementById("todo");
@@ -16,7 +12,6 @@ const displayToDos = () => {
     titleBox.id = category.category;
 
     const title = document.createElement("h2");
-    //title에 class 필요한지 css 생각해보기
     title.innerText = category.category;
 
     const iconWrapper = document.createElement("span");
@@ -65,11 +60,9 @@ const displayToDos = () => {
 
     const todoList = document.createElement("ul");
     todoList.id = "todo_list";
-    //여기도 class 필요??
 
     category.item.forEach((item) => {
       const todoItem = document.createElement("li");
-      //   todoItem.innerText = item;
 
       const todoItemName = document.createElement("span");
       todoItemName.innerText = item.name;
@@ -179,31 +172,5 @@ myButton.addEventListener("click", () => {
   location.href = "category.html";
 });
 
-// const displayFooter = () => {
-//   const footerArea = document.getElementById("footer");
-
-//   const footerCalender = document.createElement("button");
-//   footerCalender.addEventListener("click", () => {
-//     console.log("calenderbuttonclicked");
-//   });
-//   const homeIconWrapper = document.createElement("span");
-//   homeIconWrapper.innerHTML = '<i class="fa-solid fa-house"></i><h3>달력</h3>';
-
-//   footerCalender.appendChild(homeIconWrapper);
-
-//   const footerMy = document.createElement("button");
-//   footerMy.addEventListener("click", () => {
-//     console.log("mybuttonclicked");
-//   });
-//   const personIconWrapper = document.createElement("span");
-//   personIconWrapper.innerHTML = '<i class="fa-solid fa-user"></i><h3>MY</h3>';
-
-//   footerMy.appendChild(personIconWrapper);
-
-//   footerArea.appendChild(footerMy);
-//   footerArea.appendChild(footerCalender);
-// };
-
 displayCalender();
 displayToDos();
-// displayFooter();
