@@ -20,8 +20,32 @@ function App() {
   console.log(mode);
 
   function handleCardClick(index) {
-    // setCurrentCard([...name]);
     console.log(index);
+
+    if (currentCard.length === 1) {
+      checkCardMatched(index);
+    } else {
+      setCurrentCard([index]);
+    }
+
+    console.log(JSON.stringify(currentCard));
+  }
+
+  function checkCardMatched(index) {
+    console.log(index, currentCard[0]);
+    const cardName = totalCard[index];
+    console.log("current", totalCard[currentCard[0]]);
+    console.log("clicked", cardName);
+    if (totalCard[currentCard[0]] === cardName) {
+      setMatchedCard([...matchedCard, index, currentCard[0]]);
+      setCurrentCard([]);
+    } else {
+      setCurrentCard([...currentCard, index]);
+      setTimeout(() => {
+        setCurrentCard([]);
+      }, 1000);
+      // setCurrentCard([]);
+    }
   }
 
   function resetGame() {
@@ -34,7 +58,6 @@ function App() {
 
   return (
     <>
-      {JSON.stringify(totalCard)}
       <Header />
       <Body
         mode={
@@ -45,7 +68,12 @@ function App() {
           />
         }
       >
-        <CardSection handleCardClick={handleCardClick} totalCard={totalCard} />
+        <CardSection
+          matchedCard={matchedCard}
+          currentCard={currentCard}
+          handleCardClick={handleCardClick}
+          totalCard={totalCard}
+        />
       </Body>
       {/* {totalCard.map((name) => (
         <div>

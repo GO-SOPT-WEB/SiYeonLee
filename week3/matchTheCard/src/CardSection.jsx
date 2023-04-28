@@ -2,29 +2,32 @@ import styled from "styled-components";
 import Card from "./Card";
 import cat from "./assets/cat";
 
-function CardSection({ totalCard, handleCardClick }) {
-  console.log(totalCard);
+function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
   return (
     <div>
-      {totalCard.map((name, index) => (
-        <Card
-          key={index}
-          imageSrc={cat.find((v) => v.name === name).src}
-          onClick={() => handleCardClick({ index })}
-        ></Card>
-      ))}
+      <div>
+        <div>total: {JSON.stringify(totalCard)}</div>
+        <div>matched: {JSON.stringify(matchedCard)}</div>
+        <div>current: {JSON.stringify(currentCard)}</div>
+      </div>
+      <Cards>
+        {totalCard.map((name, index) => (
+          <Card
+            key={index}
+            imageSrc={cat.find((v) => v.name === name).src}
+            onClick={() => handleCardClick(index)}
+            isOpen={matchedCard.includes(index) || currentCard.includes(index)}
+          ></Card>
+        ))}
+      </Cards>
     </div>
   );
 }
 
 export default CardSection;
 
-const Square = styled.section`
-  width: 200px;
-  height: 350px;
-`;
-
-const Gif = styled.article`
-  width: 180px;
-  height: 300px;
+const Cards = styled.section`
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 10px;
 `;

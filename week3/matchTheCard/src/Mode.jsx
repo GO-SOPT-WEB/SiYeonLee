@@ -25,6 +25,7 @@ export default Mode;
 
 const Section = styled.section`
   display: flex;
+  justify-content: center;
 `;
 const Button = styled.button`
   margin-right: 10px;
