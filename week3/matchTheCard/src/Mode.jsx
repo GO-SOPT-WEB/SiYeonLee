@@ -2,21 +2,11 @@ import styled from "styled-components";
 import { useState } from "react";
 
 function Mode({ handleModeChange }) {
-  //   const [mode, setMode] = useState("");
-  //   function handleModeChange(e) {
-  //     setMode(e.target.value);
-  // console.log(mode);
-  //   }
-
   return (
     <Section>
       <Button onClick={() => handleModeChange("easy")}>EASY</Button>
-      <Button onClick={() => handleModeChange("normal")} value={"normal"}>
-        NORMAL
-      </Button>
-      <Button onClick={() => handleModeChange("hard")} value={"hard"}>
-        HARD
-      </Button>
+      <Button onClick={() => handleModeChange("normal")}>NORMAL</Button>
+      <Button onClick={() => handleModeChange("hard")}>HARD</Button>
     </Section>
   );
 }

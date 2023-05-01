@@ -1,7 +1,13 @@
 import styled from "styled-components";
+import Score from "./Score";
 
 function Header() {
-  return <Title> Cats Rule! </Title>;
+  return (
+    <>
+      <Title> Cats Rule! </Title>
+      {/* <Score></Score> */}
+    </>
+  );
 }
 
 const Title = styled.h1`

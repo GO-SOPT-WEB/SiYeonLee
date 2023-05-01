@@ -11,10 +11,18 @@ function App() {
   const [totalCard, setTotalCard] = useState([]);
   const [matchedCard, setMatchedCard] = useState([]);
   const [currentCard, setCurrentCard] = useState([]);
+  const [totalCardCount, setTotalCardCount] = useState(5);
 
   function handleModeChange(mode) {
     setMode(mode);
     resetGame();
+    if (mode === "easy") {
+      setTotalCardCount(5);
+    } else if (mode === "normal") {
+      setTotalCardCount(7);
+    } else if (mode === "hard") {
+      setTotalCardCount(9);
+    }
   }
 
   console.log(mode);
@@ -49,7 +57,7 @@ function App() {
   }
 
   function resetGame() {
-    const totalCardCount = 5;
+    // const totalCardCount = 5;
 
     const allCats = cat.slice(0, totalCardCount).map((eachCat) => eachCat.name);
 
@@ -75,11 +83,6 @@ function App() {
           totalCard={totalCard}
         />
       </Body>
-      {/* {totalCard.map((name) => (
-        <div>
-          <img src={cat.find((v) => v.name === name).src} />
-        </div>
-      ))} */}
     </>
   );
 }
