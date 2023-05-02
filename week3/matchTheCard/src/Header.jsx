@@ -1,18 +1,26 @@
 import styled from "styled-components";
-import Score from "./Score";
 
-function Header() {
+function Header({ score, children }) {
   return (
-    <>
+    <HeaderBox>
       <Title> Cats Rule! </Title>
-      {/* <Score></Score> */}
-    </>
+      {score}
+      {children}
+    </HeaderBox>
   );
 }
 
+const HeaderBox = styled.section`
+  display: flex;
+  flex-direction: column;
+  background-color: #000000b0;
+`;
+
 const Title = styled.h1`
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 50px;
+  font-size: 60px;
+  color: white;
+  margin: 0;
 `;
 
 export default Header;

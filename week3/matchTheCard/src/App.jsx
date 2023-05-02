@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Body from "./Body";
 import Mode from "./Mode";
 import cat from "./assets/cat";
 import CardSection from "./CardSection";
+import Score from "./Score";
 
 function App() {
   const [mode, setMode] = useState("");
@@ -15,7 +16,6 @@ function App() {
 
   function handleModeChange(mode) {
     setMode(mode);
-    resetGame();
     if (mode === "easy") {
       setTotalCardCount(5);
     } else if (mode === "normal") {
@@ -23,6 +23,7 @@ function App() {
     } else if (mode === "hard") {
       setTotalCardCount(9);
     }
+    resetGame();
   }
 
   console.log(mode);
@@ -66,7 +67,9 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header
+        score={<Score matchedCard={matchedCard} totalCard={totalCard} />}
+      />
       <Body
         mode={
           <Mode

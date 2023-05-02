@@ -15,6 +15,8 @@ function Score({ matchedCard, totalCard }) {
 export default Score;
 
 const ScoreBoard = styled.h1`
+  margin: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
+  color: white;
 `;
