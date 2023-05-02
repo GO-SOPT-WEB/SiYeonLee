@@ -31,11 +31,13 @@ const Button = styled.button`
   &:hover {
     background-color: tomato;
     color: papayawhip;
+    cursor: pointer;
   }
   &:active {
     background-color: tomato;
     color: papayawhip;
-    box-shadow: 2px 5px #666;
+    box-shadow: 3px 5px #666;
     transform: translateY(4px);
+    outline-color: #ff8f33;
   }
 `;

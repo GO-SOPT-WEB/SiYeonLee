@@ -14,6 +14,10 @@ function App() {
   const [currentCard, setCurrentCard] = useState([]);
   const [totalCardCount, setTotalCardCount] = useState(5);
 
+  useEffect(() => {
+    resetGame();
+  }, []);
+
   function handleModeChange(mode) {
     setMode(mode);
     if (mode === "easy") {
@@ -29,8 +33,6 @@ function App() {
   console.log(mode);
 
   function handleCardClick(index) {
-    console.log(index);
-
     if (currentCard.length === 1) {
       checkCardMatched(index);
     } else {
