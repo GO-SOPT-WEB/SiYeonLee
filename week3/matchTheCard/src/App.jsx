@@ -30,7 +30,7 @@ function App() {
     resetGame();
   }
 
-  console.log(mode);
+  // console.log(mode);
 
   function handleCardClick(index) {
     if (currentCard.length === 1 && !currentCard.includes(index)) {
@@ -60,11 +60,18 @@ function App() {
   }
 
   function resetGame() {
-    // const totalCardCount = 5;
-
+    // let x = Math.floor(Math.random() * totalCardCount);
+    // cat.sort(() => Math.floor(Math.random() * totalCardCount));
+    // const allCats = cat.slice(0, totalCardCount).map((eachCat) => eachCat.name);
     const allCats = cat.slice(0, totalCardCount).map((eachCat) => eachCat.name);
+    // allCats.sort(() => Math.floor(Math.random() * totalCardCount));
 
-    setTotalCard([...allCats, ...allCats]);
+    setTotalCard(
+      [...allCats, ...allCats].sort(() =>
+        Math.floor(Math.random() * totalCardCount)
+      )
+    );
+    console.log(totalCard, totalCardCount);
   }
 
   return (

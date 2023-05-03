@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 function Card({ imageSrc, onClick, isOpen }) {
   return (
-    <CardWrapper>
+    <CardWrapper isOpen={isOpen}>
       <p> {isOpen ? "open" : "close"} </p>
-      <img src={imageSrc} onClick={onClick} width="150" height="180" />
+      <Image src={imageSrc} onClick={onClick} width="150" height="180" />
     </CardWrapper>
   );
 }
@@ -15,4 +15,14 @@ const CardWrapper = styled.section`
   width: 200px;
   background-color: papayawhip;
   border-radius: 10px;
+  ${(props) =>
+    props.isOpen
+      ? css`
+          background-color: #ffbd52;
+        `
+      : css`
+          background-color: pink;
+        `}
 `;
+
+const Image = styled.img``;
