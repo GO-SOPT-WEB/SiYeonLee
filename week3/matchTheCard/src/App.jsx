@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     resetGame();
-  }, []);
+  }, [mode]);
 
   function handleModeChange(mode) {
     setMode(mode);
@@ -33,13 +33,13 @@ function App() {
   console.log(mode);
 
   function handleCardClick(index) {
-    if (currentCard.length === 1) {
+    if (currentCard.length === 1 && !currentCard.includes(index)) {
       checkCardMatched(index);
-    } else {
+    } else if (!matchedCard.includes(index)) {
       setCurrentCard([index]);
     }
 
-    console.log(JSON.stringify(currentCard));
+    // console.log(JSON.stringify(currentCard));
   }
 
   function checkCardMatched(index) {

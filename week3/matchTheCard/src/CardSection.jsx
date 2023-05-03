@@ -28,6 +28,6 @@ export default CardSection;
 
 const Cards = styled.section`
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  gap: 10px;
+  grid-template-columns: repeat(5, 200px);
+  gap: 20px;
 `;
