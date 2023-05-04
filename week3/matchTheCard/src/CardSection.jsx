@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import Card from "./Card";
 import cat from "./assets/cat";
 
@@ -15,7 +15,11 @@ function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
           <Card
             key={index}
             imageSrc={cat.find((v) => v.name === name).src}
-            onClick={() => handleCardClick(index)}
+            imageName={name}
+            onClick={() => {
+              console.log(index);
+              handleCardClick(index);
+            }}
             isOpen={matchedCard.includes(index) || currentCard.includes(index)}
           ></Card>
         ))}

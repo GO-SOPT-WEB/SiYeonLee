@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
 
-function Mode({ handleModeChange }) {
+function Mode({ mode, handleModeChange }) {
   return (
     <Section>
       <Button onClick={() => handleModeChange("easy")}>EASY</Button>
@@ -33,7 +32,7 @@ const Button = styled.button`
     color: papayawhip;
     cursor: pointer;
   }
-  &:active {
+  &.activeButton {
     background-color: tomato;
     color: papayawhip;
     box-shadow: 3px 5px #666;

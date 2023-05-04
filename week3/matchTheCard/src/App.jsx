@@ -30,16 +30,12 @@ function App() {
     resetGame();
   }
 
-  // console.log(mode);
-
   function handleCardClick(index) {
     if (currentCard.length === 1 && !currentCard.includes(index)) {
       checkCardMatched(index);
     } else if (!matchedCard.includes(index)) {
       setCurrentCard([index]);
     }
-
-    // console.log(JSON.stringify(currentCard));
   }
 
   function checkCardMatched(index) {
@@ -55,24 +51,17 @@ function App() {
       setTimeout(() => {
         setCurrentCard([]);
       }, 1000);
-      // setCurrentCard([]);
     }
   }
 
   function resetGame() {
-    // let x = Math.floor(Math.random() * totalCardCount);
     // cat.sort(() => Math.floor(Math.random() * totalCardCount));
     // const allCats = cat.slice(0, totalCardCount).map((eachCat) => eachCat.name);
     const allCats = cat.slice(0, totalCardCount).map((eachCat) => eachCat.name);
-    // allCats.sort(() => Math.floor(Math.random() * totalCardCount));
-
-    setTotalCard(
-      [...allCats, ...allCats].sort(() =>
-        Math.floor(Math.random() * totalCardCount)
-      )
-    );
-    console.log(totalCard, totalCardCount);
+    // 💓 여기요!!!
+    setTotalCard([...allCats, ...allCats].sort(() => Math.random() - 0.5));
   }
+  console.log(totalCard, totalCardCount);
 
   return (
     <>
