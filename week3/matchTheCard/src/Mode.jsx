@@ -3,9 +3,24 @@ import styled from "styled-components";
 function Mode({ mode, handleModeChange }) {
   return (
     <Section>
-      <Button onClick={() => handleModeChange("easy")}>EASY</Button>
-      <Button onClick={() => handleModeChange("normal")}>NORMAL</Button>
-      <Button onClick={() => handleModeChange("hard")}>HARD</Button>
+      <Button
+        onClick={() => handleModeChange("easy")}
+        className={mode === "easy" ? "selectedButton" : ""}
+      >
+        EASY
+      </Button>
+      <Button
+        onClick={() => handleModeChange("normal")}
+        className={mode === "normal" ? "selectedButton" : ""}
+      >
+        NORMAL
+      </Button>
+      <Button
+        onClick={() => handleModeChange("hard")}
+        className={mode === "hard" ? "selectedButton" : ""}
+      >
+        HARD
+      </Button>
     </Section>
   );
 }
@@ -32,7 +47,7 @@ const Button = styled.button`
     color: papayawhip;
     cursor: pointer;
   }
-  &.activeButton {
+  &.selectedButton {
     background-color: tomato;
     color: papayawhip;
     box-shadow: 3px 5px #666;
