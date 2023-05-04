@@ -55,11 +55,19 @@ function App() {
   }
 
   function resetGame() {
-    // cat.sort(() => Math.floor(Math.random() * totalCardCount));
     // const allCats = cat.slice(0, totalCardCount).map((eachCat) => eachCat.name);
-    const allCats = cat.slice(0, totalCardCount).map((eachCat) => eachCat.name);
+
+    const allCatsRandom = cat
+      .sort(() => Math.random() - 0.5)
+      .slice(0, totalCardCount)
+      .map((eachCat) => eachCat.name);
     // 💓 여기요!!!
-    setTotalCard([...allCats, ...allCats].sort(() => Math.random() - 0.5));
+    setTotalCard(
+      [...allCatsRandom, ...allCatsRandom].sort(() => Math.random() - 0.5)
+    );
+    setMatchedCard([]);
+    setCurrentCard([]);
+    // .sort(() => Math.random() - 0.5));
   }
   console.log(totalCard, totalCardCount);
 
