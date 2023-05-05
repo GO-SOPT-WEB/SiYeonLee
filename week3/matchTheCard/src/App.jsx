@@ -62,7 +62,6 @@ function App() {
       .sort(() => Math.random() - 0.5)
       .slice(0, totalCardCount)
       .map((eachCat) => eachCat.name);
-    // 💓 여기요!!!
     setTotalCard(
       [...allCatsRandom, ...allCatsRandom].sort(() => Math.random() - 0.5)
     );
