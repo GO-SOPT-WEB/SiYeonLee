@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 function Score({ matchedCard, totalCard }) {
+  //현재 스코어는 맞춘 카드 array 길이의 절반, 총 스코어는 총 카드 array 갯수의 절반
   const score = matchedCard.length / 2;
   const totalScore = totalCard.length / 2;
 

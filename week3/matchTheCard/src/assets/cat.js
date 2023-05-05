@@ -1,39 +1,49 @@
+import cat1 from "./images/cat1.jpeg";
+import cat2 from "./images/cat2.jpeg";
+import cat3 from "./images/cat3.jpeg";
+import cat4 from "./images/cat4.jpeg";
+import cat5 from "./images/cat5.jpeg";
+import cat6 from "./images/cat6.jpeg";
+import cat7 from "./images/cat7.jpeg";
+import cat8 from "./images/cat8.png";
+import cat9 from "./images/cat9.jpeg";
+
 const cat = [
   {
     name: "cat1",
-    src: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+    src: cat1,
   },
   {
     name: "cat2",
-    src: "https://media.giphy.com/media/l4KibK3JwaVo0CjDO/giphy.gif",
+    src: cat2,
   },
   {
     name: "cat3",
-    src: "https://media.giphy.com/media/10dU7AN7xsi1I4/giphy.gif",
+    src: cat3,
   },
   {
     name: "cat4",
-    src: "https://media.giphy.com/media/11IYKJ5sN73twk/giphy.gif",
+    src: cat4,
   },
   {
     name: "cat5",
-    src: "https://media.giphy.com/media/S6VGjvmFRu5Qk/giphy.gif",
+    src: cat5,
   },
   {
     name: "cat6",
-    src: "https://media.giphy.com/media/gwjociZExlDqAJWXgO/giphy.gif",
+    src: cat6,
   },
   {
     name: "cat7",
-    src: "https://media.giphy.com/media/2mtdqnG4bAgE/giphy.gif",
+    src: cat7,
   },
   {
     name: "cat8",
-    src: "https://media.giphy.com/media/C23cMUqoZdqMg/giphy.gif",
+    src: cat8,
   },
   {
     name: "cat9",
-    src: "https://media.giphy.com/media/hU4G6pNb90PGiECuDv/giphy.gif",
+    src: cat9,
   },
 ];
 

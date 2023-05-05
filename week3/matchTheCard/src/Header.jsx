@@ -13,8 +13,6 @@ function Header({ score, children }) {
 const HeaderBox = styled.section`
   display: flex;
   flex-direction: column;
-  background-color: #000000b0;
-  border-radius: 10px;
 `;
 
 const Title = styled.h1`

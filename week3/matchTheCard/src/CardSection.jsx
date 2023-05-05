@@ -4,12 +4,7 @@ import cat from "./assets/cat";
 
 function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
   return (
-    <div>
-      <div>
-        <div>total: {JSON.stringify(totalCard)}</div>
-        <div>matched: {JSON.stringify(matchedCard)}</div>
-        <div>current: {JSON.stringify(currentCard)}</div>
-      </div>
+    <CardBox>
       <Cards>
         {totalCard.map((name, index) => (
           <Card
@@ -24,14 +19,32 @@ function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
           ></Card>
         ))}
       </Cards>
-    </div>
+    </CardBox>
   );
 }
 
 export default CardSection;
 
 const Cards = styled.section`
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
   display: grid;
   grid-template-columns: repeat(5, 200px);
   gap: 20px;
+`;
+
+const CardBox = styled.section`
+  /* position: absolute; */
+  /* width: 100%;
+  height: 100%;
+  background: none;
+  top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
 `;
