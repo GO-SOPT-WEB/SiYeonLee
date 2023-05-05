@@ -47,7 +47,8 @@ const Button = styled.button`
     color: papayawhip;
     cursor: pointer;
   }
-  &.selectedButton {
+  &.selectedButton,
+  :focus {
     background-color: tomato;
     color: papayawhip;
     box-shadow: 3px 5px #666;

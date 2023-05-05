@@ -6,6 +6,7 @@ import Mode from "./Mode";
 import cat from "./assets/cat";
 import CardSection from "./CardSection";
 import Score from "./Score";
+import Reset from "./Reset";
 
 function App() {
   const [mode, setMode] = useState("easy");
@@ -71,6 +72,7 @@ function App() {
 
   return (
     <>
+      <Reset resetGame={resetGame}></Reset>
       <Header
         score={<Score matchedCard={matchedCard} totalCard={totalCard} />}
       />
