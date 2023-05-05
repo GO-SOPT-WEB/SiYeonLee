@@ -32,8 +32,6 @@ const Cards = styled.section`
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  transform-style: preserve-3d;
-  transition: all 0.8s ease;
   display: grid;
   grid-template-columns: repeat(5, 200px);
   gap: 20px;
