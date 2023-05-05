@@ -26,23 +26,10 @@ function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
 export default CardSection;
 
 const Cards = styled.section`
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(5, 200px);
   gap: 20px;
 `;
 
-const CardBox = styled.section`
-  /* position: absolute; */
-  /* width: 100%;
-  height: 100%;
-  background: none;
-  top: 50%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
-`;
+const CardBox = styled.section``;
