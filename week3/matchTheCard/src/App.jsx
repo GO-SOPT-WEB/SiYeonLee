@@ -8,7 +8,7 @@ import CardSection from "./CardSection";
 import Score from "./Score";
 
 function App() {
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState("easy");
   const [totalCard, setTotalCard] = useState([]);
   const [matchedCard, setMatchedCard] = useState([]);
   const [currentCard, setCurrentCard] = useState([]);
@@ -39,10 +39,10 @@ function App() {
   }
 
   function checkCardMatched(index) {
-    console.log(index, currentCard[0]);
+    // console.log(index, currentCard[0]);
     const cardName = totalCard[index];
-    console.log("current", totalCard[currentCard[0]]);
-    console.log("clicked", cardName);
+    // console.log("current", totalCard[currentCard[0]]);
+    // console.log("clicked", cardName);
     if (totalCard[currentCard[0]] === cardName) {
       setMatchedCard([...matchedCard, index, currentCard[0]]);
       setCurrentCard([]);
@@ -69,7 +69,7 @@ function App() {
     setCurrentCard([]);
     // .sort(() => Math.random() - 0.5));
   }
-  console.log(totalCard, totalCardCount);
+  // console.log(totalCard, totalCardCount);
 
   return (
     <>
