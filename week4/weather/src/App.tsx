@@ -29,7 +29,7 @@ function App() {
     <MainArea>
       <Header />
       <div>
-        body <body></body>
+        <body>body </body>
       </div>
       {/* <Comp value="클릭" onClick={onclick} /> */}
     </MainArea>
