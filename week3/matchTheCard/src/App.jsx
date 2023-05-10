@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import styled from "styled-components";
 import Header from "./Header";
-import Body from "./Body";
 import Mode from "./Mode";
 import cat from "./assets/cat";
 import CardSection from "./CardSection";
@@ -75,7 +75,8 @@ function App() {
       <Header
         score={<Score matchedCard={matchedCard} totalCard={totalCard} />}
       />
-      <Body mode={<Mode mode={mode} handleModeChange={handleModeChange} />}>
+      <Body>
+        <Mode mode={mode} handleModeChange={handleModeChange} />
         <CardSection
           matchedCard={matchedCard}
           currentCard={currentCard}
@@ -88,3 +89,9 @@ function App() {
 }
 
 export default App;
+
+const Body = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
