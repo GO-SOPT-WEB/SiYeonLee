@@ -4,7 +4,7 @@ import cat from "./assets/cat";
 
 function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
   return (
-    <CardBox>
+    <section>
       <Cards>
         {totalCard.map((name, index) => (
           <Card
@@ -18,7 +18,7 @@ function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
           ></Card>
         ))}
       </Cards>
-    </CardBox>
+    </section>
   );
 }
 
@@ -30,5 +30,3 @@ const Cards = styled.section`
   grid-template-columns: repeat(5, 200px);
   gap: 20px;
 `;
-
-const CardBox = styled.section``;
