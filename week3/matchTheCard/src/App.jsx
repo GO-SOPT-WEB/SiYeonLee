@@ -75,15 +75,7 @@ function App() {
       <Header
         score={<Score matchedCard={matchedCard} totalCard={totalCard} />}
       />
-      <Body
-        mode={
-          <Mode
-            mode={mode}
-            setMode={setMode}
-            handleModeChange={handleModeChange}
-          />
-        }
-      >
+      <Body mode={<Mode mode={mode} handleModeChange={handleModeChange} />}>
         <CardSection
           matchedCard={matchedCard}
           currentCard={currentCard}
