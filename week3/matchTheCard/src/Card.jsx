@@ -5,19 +5,11 @@ function Card({ imageSrc, onClick, isOpen, imageName }) {
     <CardWrapper isOpen={isOpen} onClick={onClick}>
       <CardInner isOpen={isOpen}>
         <FrontArticle>
-          <Image
-            src={imageSrc}
-            alt={imageName}
-            isOpen={isOpen}
-            width="180"
-            height="220"
-          />
+          <Image src={imageSrc} alt={imageName} isOpen={isOpen} />
         </FrontArticle>
         <BackArticle>
           <Image
             src="https://www.svgrepo.com/show/454281/cat-halloween-kitty.svg"
-            width="180"
-            height="220"
             alt="default cat"
           />
         </BackArticle>
@@ -40,6 +32,8 @@ const CardWrapper = styled.section`
 
 const Image = styled.img`
   border-radius: 10px;
+  width: 180px;
+  height: 220px;
 `;
 
 const BackArticle = styled.article`
