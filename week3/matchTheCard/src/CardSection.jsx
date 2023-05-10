@@ -12,7 +12,6 @@ function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
             imageSrc={cat.find((v) => v.name === name).src}
             imageName={name}
             onClick={() => {
-              console.log(index);
               handleCardClick(index);
             }}
             isOpen={matchedCard.includes(index) || currentCard.includes(index)}
