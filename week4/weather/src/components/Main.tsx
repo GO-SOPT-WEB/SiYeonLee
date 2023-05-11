@@ -3,10 +3,15 @@ import { useState } from "react";
 
 function Main() {
   const [cityName, setCityName] = useState("");
+  const [searchType, setSearchType] = useState("daily");
+
+  const handelSearchTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSearchType(e.target.value);
+  };
 
   const handelCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newCityName = e.target.value;
-    console.log(newCityName);
+    // console.log(newCityName);
     setCityName(newCityName);
   };
 
@@ -20,6 +25,10 @@ function Main() {
 
   return (
     <Div>
+      <Select onChange={handelSearchTypeChange} value={searchType}>
+        <option value="daily">Daily Weather</option>
+        <option value="weekly">Weekly Weather</option>
+      </Select>
       <Input
         placeholder="type city name here"
         type="text"
@@ -41,6 +50,12 @@ const Div = styled.div`
   gap: 30px;
   padding-top: 50px;
   background-color: papayawhip;
+`;
+
+const Select = styled.select`
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
 `;
 
 const Input = styled.input`
