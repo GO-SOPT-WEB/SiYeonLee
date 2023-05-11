@@ -1,10 +1,7 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import { Comp } from "./Comp";
-import axios from "axios";
-// import Main from "./components/Main";
-import Header from "./components/Header";
 import { styled } from "styled-components";
+import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 // interface TodayWeatherResponse {
 //   cod: string;
@@ -28,10 +25,7 @@ function App() {
   return (
     <MainArea>
       <Header />
-      <div>
-        <body>body </body>
-      </div>
-      {/* <Comp value="클릭" onClick={onclick} /> */}
+      <Main />
     </MainArea>
   );
 }
