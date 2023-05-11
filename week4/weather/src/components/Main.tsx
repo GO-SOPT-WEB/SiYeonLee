@@ -10,6 +10,14 @@ function Main() {
     setCityName(newCityName);
   };
 
+  const handleButtonClick = () => {
+    clearSearchBox();
+  };
+
+  const clearSearchBox = () => {
+    setCityName("");
+  };
+
   return (
     <Div>
       <Input
@@ -18,6 +26,7 @@ function Main() {
         value={cityName}
         onChange={handelCityChange}
       ></Input>
+      <Button onClick={handleButtonClick}>Search</Button>
     </Div>
   );
 }
@@ -38,4 +47,12 @@ const Input = styled.input`
   width: 200px;
   height: 25px;
   border-radius: 10px;
+`;
+
+const Button = styled.button`
+  padding: 0;
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ffc4ff;
 `;
