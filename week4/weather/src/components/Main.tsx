@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "../interfaces/WeatherInfo.interface";
 import FiveDayWeatherInfo from "../interfaces/FiveDayWeatherInfo.interface";
@@ -24,10 +24,6 @@ function Main({
 }: StateProps) {
   const [cityName, setCityName] = useState("");
   const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/");
-  }, []);
 
   const handelSearchTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSearchType(e.target.value);
@@ -72,7 +68,6 @@ function Main({
 
   return (
     <MainBox>
-      {/* <div>{JSON.stringify(response)}</div> */}
       <InputBox>
         <Select onChange={handelSearchTypeChange} value={searchType}>
           <option value="daily">Daily Weather</option>
