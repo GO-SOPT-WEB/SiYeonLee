@@ -1,15 +1,33 @@
 import { styled } from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import WeatherInfo from "../interfaces/WeatherInfo.interface";
 import FiveDayWeatherInfo from "../interfaces/FiveDayWeatherInfo.interface";
+import { Outlet, useNavigate } from "react-router-dom";
 
-function Main() {
+interface StateProps {
+  searchType: string;
+  setSearchType: React.Dispatch<React.SetStateAction<string>>;
+  oneDayResponse: WeatherInfo | null;
+  setOneDayResponse: React.Dispatch<React.SetStateAction<WeatherInfo | null>>;
+  fiveDayResponse: FiveDayWeatherInfo | null;
+  setFiveDayResponse: React.Dispatch<
+    React.SetStateAction<FiveDayWeatherInfo | null>
+  >;
+}
+
+function Main({
+  searchType,
+  setSearchType,
+  setOneDayResponse,
+  setFiveDayResponse,
+}: StateProps) {
   const [cityName, setCityName] = useState("");
-  const [searchType, setSearchType] = useState("daily");
-  const [response, setResponse] = useState<
-    WeatherInfo | null | FiveDayWeatherInfo
-  >(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/");
+  }, []);
 
   const handelSearchTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSearchType(e.target.value);
@@ -28,7 +46,8 @@ function Main() {
           }&units=metric`
         )
         .then((r) => {
-          setResponse(r.data);
+          setOneDayResponse(r.data);
+          navigate(`/daily/${cityName}`);
         });
     } else if (searchType === "weekly") {
       axios
@@ -38,7 +57,8 @@ function Main() {
           }&units=metric`
         )
         .then((r) => {
-          setResponse(r.data);
+          setFiveDayResponse(r.data);
+          navigate(`/weekly/${cityName}`);
         });
     }
 
@@ -51,52 +71,75 @@ function Main() {
   };
 
   return (
-    <Div>
-      <div>{JSON.stringify(response)}</div>
-      <Select onChange={handelSearchTypeChange} value={searchType}>
-        <option value="daily">Daily Weather</option>
-        <option value="weekly">Weekly Weather</option>
-      </Select>
-      <Input
-        placeholder="type city name here"
-        type="text"
-        value={cityName}
-        onChange={handelCityChange}
-      ></Input>
-      <Button onClick={handleButtonClick}>Search</Button>
-      <div></div>
-    </Div>
+    <MainBox>
+      {/* <div>{JSON.stringify(response)}</div> */}
+      <InputBox>
+        <Select onChange={handelSearchTypeChange} value={searchType}>
+          <option value="daily">Daily Weather</option>
+          <option value="weekly">Weekly Weather</option>
+        </Select>
+        <Input
+          placeholder="type city name here"
+          type="text"
+          value={cityName}
+          onChange={handelCityChange}
+        ></Input>
+        <Button onClick={handleButtonClick}>Search</Button>
+      </InputBox>
+      <CardBox>
+        <CardSection>
+          <Outlet />
+        </CardSection>
+      </CardBox>
+    </MainBox>
   );
 }
 
 export default Main;
 
-const Div = styled.div`
+const MainBox = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
   width: 100%;
   height: 100vh;
-  gap: 30px;
   padding-top: 50px;
   background-color: papayawhip;
 `;
 
+const InputBox = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+`;
+
+const CardBox = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Select = styled.select`
   width: 120px;
-  height: 30px;
+  height: 2em;
   border-radius: 5px;
 `;
 
 const Input = styled.input`
-  width: 200px;
-  height: 25px;
-  border-radius: 10px;
+  width: 12.5em;
+  height: 2em;
+  border-radius: 0.6em;
 `;
 
 const Button = styled.button`
   padding: 0;
-  width: 80px;
-  height: 30px;
-  border-radius: 15px;
+  width: 5em;
+  height: 2em;
+  border-radius: 0.9em;
   background-color: #ffc4ff;
+`;
+
+const CardSection = styled.section`
+  display: flex;
+  gap: 1.5em;
 `;
