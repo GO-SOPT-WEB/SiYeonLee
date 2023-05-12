@@ -1,4 +1,9 @@
-export const weatherTypeImage = [
+export const weatherImage = [
+  {
+    description: "light rain",
+    imgURL:
+      "https://i.pinimg.com/236x/32/86/d9/3286d9a785a9db5e15f7422a96d757fc.jpg",
+  },
   {
     description: "clear sky",
     imgURL:
