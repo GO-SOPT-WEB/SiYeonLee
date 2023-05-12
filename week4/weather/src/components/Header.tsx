@@ -18,7 +18,7 @@ const HeaderArea = styled.section`
 `;
 
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: 3em;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
 `;
