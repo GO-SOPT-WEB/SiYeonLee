@@ -104,14 +104,14 @@ const MainBox = styled.div`
   gap: 2em;
   width: 100%;
   height: 100vh;
-  padding-top: 50px;
+  padding-top: 2em;
   background-color: papayawhip;
 `;
 
 const InputBox = styled.div`
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 2em;
 `;
 
 const CardBox = styled.div`
@@ -120,9 +120,9 @@ const CardBox = styled.div`
 `;
 
 const Select = styled.select`
-  width: 120px;
+  width: fit-content;
   height: 2em;
-  border-radius: 5px;
+  border-radius: 0.3em;
 `;
 
 const Input = styled.input`

@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { weatherImage } from "../assets/weatherImage";
+import styled from "styled-components";
 import Main from "./Main";
 import Error from "./Error";
 import WeatherCard from "./WeatherCard";
-import { useState } from "react";
 import WeatherInfo from "../interfaces/WeatherInfo.interface";
 import FiveDayWeatherInfo from "../interfaces/FiveDayWeatherInfo.interface";
-import { weatherImage } from "../assets/weatherImage";
 
 function Router() {
   const [searchType, setSearchType] = useState("daily");
@@ -15,10 +16,14 @@ function Router() {
   const [fiveDayResponse, setFiveDayResponse] =
     useState<FiveDayWeatherInfo | null>(null);
 
+  const filteredFiveDayResponse = fiveDayResponse?.list?.filter(
+    (_, index) => (index - 2) % 8 === 0
+  );
+
   const weatherCard = (() => {
     if (searchType === "daily") {
       if (oneDayResponse === null) {
-        return <div>nothing</div>;
+        return <P>Type city name to see the weather</P>;
       }
 
       return (
@@ -39,18 +44,17 @@ function Router() {
         />
       );
     } else if (searchType === "weekly") {
-      if (fiveDayResponse === null) {
-        return <div>nothing</div>;
+      if (filteredFiveDayResponse === undefined) {
+        return <P>Type city name to see the weather</P>;
       }
 
       return (
         <>
-          {fiveDayResponse.list.map((eachDay) => (
+          {filteredFiveDayResponse.map((eachDay) => (
             <WeatherCard
               weatherImageUrl={
                 weatherImage.find(
                   (v) => v.description === eachDay.weather[0].description
-                  // .weather[2].description
                 )?.imgURL ?? ""
               }
               weatherImageALt={eachDay.weather[0].description}
@@ -85,13 +89,19 @@ function Router() {
         >
           <Route path="/:searchType">
             <Route path=":cityName" element={weatherCard} />
+            <Route path="*" element={<Error />} />
           </Route>
         </Route>
         <Route path=":searchType" element={<Error />}></Route>
-        <Route path="/*" element={<Error />}></Route>
+        <Route path="*" element={<Error />}></Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default Router;
+
+const P = styled.p`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8em;
+`;

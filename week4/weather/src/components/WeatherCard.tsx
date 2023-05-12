@@ -26,10 +26,8 @@ function WeatherCard({
   console.log("card");
   return (
     <Card>
-      <Title>
-        {date}
-        {name}
-      </Title>
+      <TitleName>{name}</TitleName>
+      <TitleDate>{date}</TitleDate>
       <Image src={weatherImageUrl} alt={weatherImageALt} />
       <Text>Temperature: {temp}℃</Text>
       <Text>Feels Like: {feelLike}℃</Text>
@@ -46,14 +44,18 @@ const Card = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 17.5em;
+  width: 14em;
   height: fit-content;
   padding: 0.9em;
   border-radius: 1em;
   background-color: white;
   box-shadow: 1em 1em skyblue;
 `;
-const Title = styled.h1`
+const TitleName = styled.h1`
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+`;
+const TitleDate = styled.h2`
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 `;
