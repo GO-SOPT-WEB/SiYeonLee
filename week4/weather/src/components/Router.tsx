@@ -87,11 +87,14 @@ function Router() {
             />
           }
         >
-          <Route path="/:searchType">
+          <Route path="daily">
+            <Route path=":cityName" element={weatherCard} />
+          </Route>
+          <Route path="weekly">
             <Route path=":cityName" element={weatherCard} />
           </Route>
         </Route>
-        <Route path="*" element={<Error />}></Route>
+        <Route path="/*" element={<Error />}></Route>
       </Routes>
     </BrowserRouter>
   );

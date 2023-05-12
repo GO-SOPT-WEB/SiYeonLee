@@ -4,7 +4,7 @@ function Error() {
   return (
     <Section>
       <Text>Something went wrong ☹️</Text>
-      <Text>Check the city name</Text>
+      <Text>Check the URL</Text>
     </Section>
   );
 }
@@ -16,11 +16,13 @@ const Section = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: papayawhip;
+  background-color: #fe9987;
+  padding-top: 2em;
 `;
 
 const Text = styled.p`
   font-family: Arial, Helvetica, sans-serif;
   font-size: 3em;
-  color: #fd7760;
+  color: white;
+  margin: 0;
 `;
