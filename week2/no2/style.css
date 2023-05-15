@@ -1,0 +1,293 @@
+@import "reset.css";
+
+:root {
+  --everydaycolor: #aeeaff;
+  --exercisecolor: #a2fbb3;
+  --soptcolor: #fec6b1;
+  --studycolor: #ff8da2;
+}
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 450px;
+  min-height: 100vh;
+  margin: 0 auto;
+
+  background-color: #ffbc41;
+}
+
+/*헤더*/
+
+header {
+  padding-top: 48px;
+
+  color: white;
+
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+/*캘린더*/
+
+#calender {
+  display: grid;
+  grid-template-columns: repeat(7, 3em);
+
+  margin-top: 30px;
+  padding: 20px;
+
+  background-color: #fbe95e;
+  color: black;
+  border-radius: 15px;
+
+  font-weight: 800;
+}
+
+#one_day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#day {
+  margin-bottom: 15px;
+}
+
+#clover_icon {
+  position: relative;
+}
+
+.fa-clover {
+  vertical-align: middle;
+
+  width: 100%;
+
+  color: white;
+
+  font-size: 35px;
+}
+
+.selected_clover i {
+  color: #c093ff;
+}
+
+#icon_no {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+}
+
+#date {
+  margin-top: 15px;
+}
+
+.selected_date {
+  margin-top: 15px;
+  color: #c093ff;
+}
+
+/*투두리스트*/
+
+#list {
+  width: 80%;
+}
+
+#todo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  max-height: 490px;
+  margin-top: 30px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+.fa-circle-plus {
+  vertical-align: middle;
+
+  width: 100%;
+  margin-left: 5px;
+
+  color: white;
+
+  font-size: 25px;
+}
+
+.modal {
+  display: none;
+  width: 220px;
+  height: 110px;
+  border-radius: 10px;
+  background-color: #fbe95e;
+  color: white;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  height: 90px;
+}
+
+.modal_input_wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+}
+
+.modal_input {
+  border: none;
+  border-radius: 6px;
+}
+
+.add_button {
+  border: none;
+  border-radius: 6px;
+  background-color: #ff8da2;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+#Everyday {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: fit-content;
+  padding: 10px;
+
+  background-color: var(--everydaycolor);
+  border-radius: 20px;
+}
+
+#Exercise {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: fit-content;
+  padding: 10px;
+
+  background-color: var(--exercisecolor);
+  border-radius: 20px;
+}
+
+#SOPT {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 10px;
+  width: fit-content;
+
+  background-color: var(--soptcolor);
+  border-radius: 20px;
+}
+
+#Study {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: fit-content;
+  padding: 10px;
+
+  background-color: var(--studycolor);
+  border-radius: 20px;
+}
+
+.plus_icon_wrapper i {
+  font-size: 20px;
+}
+
+#todo_list_wrapper {
+  background-color: transparent;
+}
+
+#todo_list {
+  margin-right: 10px;
+}
+
+.fa-heart {
+  margin-right: 10px;
+
+  color: white;
+
+  font-size: 15px;
+}
+
+.selected .fa-heart {
+  color: red;
+}
+
+#todo li {
+  display: flex;
+  justify-content: flex-start;
+
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+
+  color: black;
+
+  font-size: 20px;
+}
+
+/*footer*/
+
+footer {
+  display: flex;
+  flex-direction: row;
+  position: static;
+  bottom: 0;
+}
+
+footer button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 80px;
+  margin: 20px;
+  padding: 10px;
+
+  background-color: #323638;
+  color: white;
+  border-radius: 10px;
+  border: none;
+
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 10px;
+
+  font-size: 16px;
+}
