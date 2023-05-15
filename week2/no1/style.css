@@ -41,8 +41,8 @@ nav {
   flex-direction: column;
   background-color: #8a9a5b;
   width: 160px;
-  margin-top: 30px;
-  margin-left: 30px;
+
+  margin: 30px 0px 0px 30px;
   padding: 20px;
   border-radius: 10px;
   color: white;
@@ -53,13 +53,15 @@ ul {
   font-size: 20px;
 }
 
-#typelist {
+
+#type_list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-#type {
+
+.type {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -70,12 +72,19 @@ ul {
   border-radius: 8px;
 }
 
-#type:hover {
+
+.type:hover {
   background-color: white;
   color: #aab588;
 }
 
-section {
+
+#main_area {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu_area {
   display: grid;
   grid-template-columns: repeat(5, 208px);
   gap: 16px;
@@ -113,6 +122,8 @@ section {
   }
 }
 
+
+/* menu card */
 article {
   padding: 20px;
   display: flex;
@@ -126,11 +137,11 @@ article {
 .hashtag_list {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   overflow: hidden;
   padding: 0px;
-  height: 30px;
+  height: 15px;
   width: 150px;
 }
 
@@ -142,6 +153,86 @@ article {
 
   white-space: nowrap;
   text-overflow: clip;
+}
+
+
+.hashtag_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 160px;
+  height: 35px;
+}
+
+.fa-plus {
+  font-size: 15px;
+  margin: 0;
+}
+
+.fa-plus:hover {
+  color: #4f7942;
+}
+
+/* modal */
+
+.tag_modal {
+  display: none;
+  position: absolute;
+  width: 180px;
+  height: 80px;
+  padding: 10px;
+  background-color: #8a9a5b;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.tag_modal_content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-xmark {
+  margin: 0;
+}
+.modal_hashtag_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 0px;
+  height: 30px;
+  width: 100%;
+}
+
+.modal_hashtag_item {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 100;
+  color: white;
+}
+
+/* 카테고리 파트 */
+#category_wrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+#category_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 10px;
+  padding: 5px;
+  width: 140px;
+  height: 50px;
+  background-color: #8a9a5b;
+  color: white;
+  border-radius: 10px;
+}
+
+h3 {
+  font-size: 20px;
 }
 
 article ul {
