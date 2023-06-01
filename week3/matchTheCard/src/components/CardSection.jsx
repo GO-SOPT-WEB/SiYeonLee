@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Card from "./Card";
-import cat from "./assets/cat";
+import cat from "../assets/cat";
 
 function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
   return (

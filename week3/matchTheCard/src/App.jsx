@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import Mode from "./Mode";
 import cat from "./assets/cat";
-import CardSection from "./CardSection";
+import CardSection from "./components/CardSection";
 import Score from "./Score";
 import Reset from "./Reset";
 
