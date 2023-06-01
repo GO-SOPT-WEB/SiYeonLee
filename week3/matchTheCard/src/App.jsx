@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import styled from "styled-components";
-import Header from "./Header";
-import Mode from "./Mode";
+import Header from "./components/Header";
+import Mode from "./components/Mode";
 import cat from "./assets/cat";
 import CardSection from "./components/CardSection";
 import Score from "./Score";
-import Reset from "./Reset";
+import Reset from "./components/Reset";
 
 function App() {
   const [mode, setMode] = useState("easy");
