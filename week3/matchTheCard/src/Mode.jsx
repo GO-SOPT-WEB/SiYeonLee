@@ -1,26 +1,19 @@
 import styled from "styled-components";
 
 function Mode({ mode, handleModeChange }) {
+  const modes = ["EASY", "NORMAL", "HARD"];
+
   return (
     <Section>
-      <Button
-        onClick={() => handleModeChange("easy")}
-        className={mode === "easy" ? "selectedButton" : ""}
-      >
-        EASY
-      </Button>
-      <Button
-        onClick={() => handleModeChange("normal")}
-        className={mode === "normal" ? "selectedButton" : ""}
-      >
-        NORMAL
-      </Button>
-      <Button
-        onClick={() => handleModeChange("hard")}
-        className={mode === "hard" ? "selectedButton" : ""}
-      >
-        HARD
-      </Button>
+      {modes.map((eachMode) => (
+        <Button
+          onClick={() => handleModeChange(eachMode)}
+          className={mode === eachMode ? "selectedButton" : ""}
+          key={eachMode}
+        >
+          {eachMode}
+        </Button>
+      ))}
     </Section>
   );
 }

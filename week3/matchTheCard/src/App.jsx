@@ -23,11 +23,11 @@ function App() {
   //변경된 모드에 따라 생성될 총 카드 짝의 갯수 지정
   function handleModeChange(mode) {
     setMode(mode);
-    if (mode === "easy") {
+    if (mode === "EASY") {
       setTotalCardCount(5);
-    } else if (mode === "normal") {
+    } else if (mode === "NORMAL") {
       setTotalCardCount(7);
-    } else if (mode === "hard") {
+    } else if (mode === "HARD") {
       setTotalCardCount(9);
     }
     resetGame();
