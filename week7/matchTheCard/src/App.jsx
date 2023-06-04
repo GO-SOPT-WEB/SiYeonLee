@@ -1,19 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import styled from "styled-components";
 import Header from "./components/Header";
 import Mode from "./components/Mode";
 import cat from "./assets/cat";
 import CardSection from "./components/CardSection";
-import Score from "./Score";
+import Score from "./components/Score";
 import Reset from "./components/Reset";
+import { useRecoilState } from "recoil";
+import { selectedMode } from "./recoil/atom/selectedMode";
+import { totalCardNum } from "./recoil/atom/totalCardNum";
+import {
+  totalCards,
+  currentCards,
+  matchedCards,
+} from "./recoil/atom/cardArrays";
 
 function App() {
-  const [mode, setMode] = useState("easy");
-  const [totalCard, setTotalCard] = useState([]);
-  const [matchedCard, setMatchedCard] = useState([]);
-  const [currentCard, setCurrentCard] = useState([]);
-  const [totalCardCount, setTotalCardCount] = useState(5);
+  const [mode, setMode] = useRecoilState(selectedMode);
+  const [totalCard, setTotalCard] = useRecoilState(totalCards);
+  const [currentCard, setCurrentCard] = useRecoilState(currentCards);
+  const [matchedCard, setMatchedCard] = useRecoilState(matchedCards);
+  const [totalCardCount, setTotalCardCount] = useRecoilState(totalCardNum);
 
   //mode가 변경될 때마다 자동으로 게임 리셋해서 카드 재생성
   useEffect(() => {
@@ -72,17 +80,10 @@ function App() {
   return (
     <>
       <Reset resetGame={resetGame}></Reset>
-      <Header
-        score={<Score matchedCard={matchedCard} totalCard={totalCard} />}
-      />
+      <Header score={<Score />} />
       <Body>
-        <Mode mode={mode} handleModeChange={handleModeChange} />
-        <CardSection
-          matchedCard={matchedCard}
-          currentCard={currentCard}
-          handleCardClick={handleCardClick}
-          totalCard={totalCard}
-        />
+        <Mode handleModeChange={handleModeChange} />
+        <CardSection handleCardClick={handleCardClick} />
       </Body>
     </>
   );

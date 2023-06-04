@@ -1,7 +1,11 @@
 import styled from "styled-components";
+import { matchedCards, totalCards } from "../recoil/atom/cardArrays";
+import { useRecoilValue } from "recoil";
 
-function Score({ matchedCard, totalCard }) {
+function Score() {
   //현재 스코어는 맞춘 카드 array 길이의 절반, 총 스코어는 총 카드 array 갯수의 절반
+  const matchedCard = useRecoilValue(matchedCards);
+  const totalCard = useRecoilValue(totalCards);
   const score = matchedCard.length / 2;
   const totalScore = totalCard.length / 2;
 

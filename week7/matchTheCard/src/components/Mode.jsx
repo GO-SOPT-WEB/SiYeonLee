@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { useRecoilValue } from "recoil";
+import { selectedMode } from "../recoil/atom/selectedMode";
 
-function Mode({ mode, handleModeChange }) {
+function Mode({ handleModeChange }) {
+  const mode = useRecoilValue(selectedMode);
   const modes = ["EASY", "NORMAL", "HARD"];
 
   return (

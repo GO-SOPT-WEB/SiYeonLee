@@ -1,8 +1,18 @@
 import styled from "styled-components";
 import Card from "./Card";
 import cat from "../assets/cat";
+import { useRecoilValue } from "recoil";
+import {
+  totalCards,
+  currentCards,
+  matchedCards,
+} from "../recoil/atom/cardArrays";
 
-function CardSection({ totalCard, handleCardClick, matchedCard, currentCard }) {
+function CardSection({ handleCardClick }) {
+  const matchedCard = useRecoilValue(matchedCards);
+  const currentCard = useRecoilValue(currentCards);
+  const totalCard = useRecoilValue(totalCards);
+
   return (
     <section>
       <Cards>
