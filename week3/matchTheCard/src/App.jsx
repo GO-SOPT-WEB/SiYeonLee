@@ -5,11 +5,11 @@ import Header from "./components/Header";
 import Mode from "./components/Mode";
 import cat from "./assets/cat";
 import CardSection from "./components/CardSection";
-import Score from "./Score";
+import Score from "./components/Score";
 import Reset from "./components/Reset";
 
 function App() {
-  const [mode, setMode] = useState("easy");
+  const [mode, setMode] = useState("EASY");
   const [totalCard, setTotalCard] = useState([]);
   const [matchedCard, setMatchedCard] = useState([]);
   const [currentCard, setCurrentCard] = useState([]);
@@ -43,7 +43,7 @@ function App() {
   }
 
   //카드 짝 확인하는 함수
-  //카드 짝이 맞다면 matchedcard 에 담고 아니라면 1초 후 다시 선택해제되고 선택된 카드 array를 비워준다
+  //카드 짝이 맞다면 matchedCard 에 담고 아니라면 1초 후 다시 선택해제되고 선택된 카드 array를 비워준다
   function checkCardMatched(index) {
     const cardName = totalCard[index];
     if (totalCard[currentCard[0]] === cardName) {
