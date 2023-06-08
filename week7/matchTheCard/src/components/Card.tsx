@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import React from "react";
 
 function Card({ imageSrc, onClick, isOpen, imageName }) {
   return (

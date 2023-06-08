@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { matchedCards, totalCards } from "../recoil/atom/cardArrays";
 import { useRecoilValue } from "recoil";
+import React from "react";
 
 function Score() {
   //현재 스코어는 맞춘 카드 array 길이의 절반, 총 스코어는 총 카드 array 갯수의 절반

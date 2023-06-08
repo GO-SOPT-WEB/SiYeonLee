@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import React from "react";
 
-function Header({ score, children }) {
+function Header({ children }) {
   return (
     <HeaderBox>
       <Title> Cats Rule! </Title>
-      {score}
       {children}
     </HeaderBox>
   );

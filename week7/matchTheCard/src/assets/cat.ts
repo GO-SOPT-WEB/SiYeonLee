@@ -8,7 +8,11 @@ import cat7 from "./images/cat7.jpeg";
 import cat8 from "./images/cat8.png";
 import cat9 from "./images/cat9.jpeg";
 
-const cat = [
+export interface catInfo {
+  name: string;
+  src: string;
+}
+const cat: catInfo[] = [
   {
     name: "cat1",
     src: cat1,
