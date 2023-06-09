@@ -35,7 +35,11 @@ function CardSection({ handleCardClick }) {
       </section>
     );
   } else {
-    console.log("error");
+    return (
+      <section>
+        <Cards />
+      </section>
+    );
   }
 }
 
