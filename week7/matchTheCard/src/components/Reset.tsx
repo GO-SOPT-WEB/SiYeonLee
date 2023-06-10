@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import React from "react";
 
-function Reset({ resetGame }) {
+interface ResetProps {
+  resetGame: () => void;
+}
+
+function Reset({ resetGame }: ResetProps) {
   return (
     <Section>
       <Button onClick={resetGame}>Reset</Button>
