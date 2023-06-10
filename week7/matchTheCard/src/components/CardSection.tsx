@@ -9,10 +9,14 @@ import {
 } from "../recoil/atom/cardArrays";
 import React from "react";
 
-function CardSection({ handleCardClick }) {
-  const matchedCard = useRecoilValue(matchedCards);
-  const currentCard = useRecoilValue(currentCards);
-  const totalCard = useRecoilValue(totalCards);
+interface CardSectionProps {
+  handleCardClick: (index: number) => void;
+}
+
+function CardSection({ handleCardClick }: CardSectionProps) {
+  const matchedCard: number[] = useRecoilValue(matchedCards);
+  const currentCard: number[] = useRecoilValue(currentCards);
+  const totalCard: string[] = useRecoilValue(totalCards);
 
   if (cat) {
     return (

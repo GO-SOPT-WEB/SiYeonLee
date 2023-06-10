@@ -3,9 +3,13 @@ import { useRecoilValue } from "recoil";
 import { selectedMode } from "../recoil/atom/selectedMode";
 import React from "react";
 
-function Mode({ handleModeChange }) {
+interface ModeProps {
+  handleModeChange: (mode: string) => void;
+}
+
+function Mode({ handleModeChange }: ModeProps) {
   const mode = useRecoilValue(selectedMode);
-  const modes = ["EASY", "NORMAL", "HARD"];
+  const modes: string[] = ["EASY", "NORMAL", "HARD"];
 
   return (
     <Section>

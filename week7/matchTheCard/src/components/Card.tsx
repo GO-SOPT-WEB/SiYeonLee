@@ -1,7 +1,14 @@
 import styled, { css } from "styled-components";
 import React from "react";
 
-function Card({ imageSrc, onClick, isOpen, imageName }) {
+interface CardProps {
+  imageSrc?: string;
+  imageName: string;
+  onClick: () => void;
+  isOpen: boolean;
+}
+
+function Card({ imageSrc, onClick, isOpen, imageName }: CardProps) {
   return (
     <CardWrapper isOpen={isOpen} onClick={onClick}>
       <CardInner isOpen={isOpen}>
