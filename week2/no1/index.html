@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍝Synthia's Pasta House🍝</title>
+    <script
+      src="https://kit.fontawesome.com/bef409a910.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/pasta.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🍝Synthia's Pasta House🍝</h1>
+      <i class="fa-solid fa-bars"></i>
+    </header>
+    <main>
+      <nav>
+        <h2>종류</h2>
+        <ul id="type_list">
+          <label>
+            <li class="type">
+              <input type="checkbox" class="check_all" value="all" /> 전체🍽️
+            </li></label
+          >
+          <label
+            ><li class="type">
+              <input
+                type="checkbox"
+                class="check_tomato"
+                value="tomato"
+              />토마토 소스🥫
+            </li></label
+          >
+          <label>
+            <li class="type">
+              <input type="checkbox" class="check_oil" value="oil" />오일 소스🧈
+            </li></label
+          >
+          <label
+            ><li class="type">
+              <input type="checkbox" class="check_cream" value="cream" />크림
+              소스🥛
+            </li></label
+          >
+        </ul>
+      </nav>
+      <section id="main_area">
+        <section id="category_area"></section>
+        <section id="menu_area"></section>
+      </section>
+    </main>
+  </body>
+</html>
