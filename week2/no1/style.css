@@ -41,6 +41,7 @@ nav {
   flex-direction: column;
   background-color: #8a9a5b;
   width: 160px;
+
   margin: 30px 0px 0px 30px;
   padding: 20px;
   border-radius: 10px;
@@ -52,11 +53,13 @@ ul {
   font-size: 20px;
 }
 
+
 #type_list {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 .type {
   display: flex;
@@ -69,10 +72,12 @@ ul {
   border-radius: 8px;
 }
 
+
 .type:hover {
   background-color: white;
   color: #aab588;
 }
+
 
 #main_area {
   display: flex;
@@ -117,6 +122,7 @@ ul {
   }
 }
 
+
 /* menu card */
 article {
   padding: 20px;
@@ -148,6 +154,7 @@ article {
   white-space: nowrap;
   text-overflow: clip;
 }
+
 
 .hashtag_container {
   display: flex;
